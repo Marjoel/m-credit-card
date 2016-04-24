@@ -15,7 +15,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-diners.svg" width="30px"/> __Diners Club International__ `diners`
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-jcb.svg" width="30px"/> __Japanese  Credit Bureau__ `jcb`
 
-| Brand      | It starts                                      | Maximum size     |
+| Brand      | It starts                                      | Length           |
 | ---------- | ---------------------------------------------- | ---------------- |
 | Visa       | 4                                              | 13, 16           |
 | Mastercard | 5                                              | 16               |
