@@ -7,12 +7,12 @@ _Validate credit card number and identify it brand in a simple way with this mod
 
 ## Supported brands
 
-* Visa `visa`
-* Mastercard `mastercard`
-* American Express `amex`
-* Hipercard  `hipercard`
-* Hiper `hiper`
-* Diners Club International `diners`
+* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-visa.svg" width="30px"/> Visa `visa`
+* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-mastercard.svg" width="30px"/> Mastercard `mastercard`
+* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-amex.svg" width="30px"/> American Express `amex`
+* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hipercard.svg" width="30px"/> Hipercard  `hipercard`
+* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hiper.svg" width="30px"/> Hiper `hiper`
+* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-diners.svg" width="30px"/> Diners Club International `diners`
 
 ## How to use
 
