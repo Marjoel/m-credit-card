@@ -57,7 +57,7 @@ Install local dependencies.
 $ npm install
 ```
 
-Before the commit:
+__Before the commit__
 
 Run `grunt style` to validate the code style.
 
