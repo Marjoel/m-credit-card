@@ -18,7 +18,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 
 1. Set the directive on the input.
 2. Set a span with a class called `m-credit-card`.
-3. Set a custom css for the classes:
+3. Set a custom `css` for the following classes.
 
 * `.m-credit-card`
 * `.m-credit-card.visa`
