@@ -41,6 +41,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 - `.m-credit-card.diners`
 - `.m-credit-card.amex`
 - `.m-credit-card.jcb`
+- `.m-credit-card.elo`
 
 
 ```html
