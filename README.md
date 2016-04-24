@@ -66,6 +66,12 @@ Run `grunt style` to validate the code style.
 $ grunt style
 ```
 
+Run `npm test` to validate the unit testing.
+
+```sh
+$ npm test
+```
+
 Then run `grunt build` to generate the `dist` folder.
 
 ```sh
@@ -75,5 +81,4 @@ $ grunt build
 ---
 
 ## To do
-- [ ] Unit testing
 - [ ] Identify other credit card brands

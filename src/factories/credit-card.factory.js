@@ -82,7 +82,7 @@
 		}
 
 		function strip(value) {
-			return (value || '').toString().replace(/[^\d]+/g, '');
+			return value.toString().replace(/[^\d]+/g, '');
 		}
 	}
 })();
