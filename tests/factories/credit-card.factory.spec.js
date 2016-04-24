@@ -18,28 +18,32 @@ describe('CreditCardFactory', function() {
 			expect(CreditCardFactoryMock.getBrand('4916414802148732')).toBe('visa');
 		});
 		
-		it('it should be visa', function() {
+		it('it should be mastercard', function() {
 			expect(CreditCardFactoryMock.getBrand('5588139637580650')).toBe('mastercard');
 		});
 		
-		it('it should be visa', function() {
+		it('it should be amex', function() {
 			expect(CreditCardFactoryMock.getBrand('347712824774832')).toBe('amex');
 		});
 		
-		it('it should be visa', function() {
+		it('it should be diners', function() {
 			expect(CreditCardFactoryMock.getBrand('30129309150259')).toBe('diners');
 		});
 		
-		it('it should be visa', function() {
+		it('it should be hipercard', function() {
 			expect(CreditCardFactoryMock.getBrand('6062826060750197')).toBe('hipercard');
 		});
 		
-		it('it should be visa', function() {
+		it('it should be hiper', function() {
 			expect(CreditCardFactoryMock.getBrand('6370951234556788')).toBe('hiper');
 		});
 		
-		it('it should be visa', function() {
+		it('it should be jcb', function() {
 			expect(CreditCardFactoryMock.getBrand('3597639252063829')).toBe('jcb');
+		});
+		
+		it('it should be elo', function() {
+			expect(CreditCardFactoryMock.getBrand('6550212354313464')).toBe('elo');
 		});
 	});
 

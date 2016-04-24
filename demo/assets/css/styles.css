@@ -89,3 +89,7 @@
 .m-credit-card.jcb {
 	background-image: url(../images/credit-card-jcb.svg);
 }
+
+.m-credit-card.elo {
+	background-image: url(../images/credit-card-elo.svg);
+}

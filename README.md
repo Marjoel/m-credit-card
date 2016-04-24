@@ -14,6 +14,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hiper.svg" width="30px"/> __Hiper__ `hiper`
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-diners.svg" width="30px"/> __Diners Club International__ `diners`
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-jcb.svg" width="30px"/> __Japanese  Credit Bureau__ `jcb`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-elo.svg" width="30px"/> __Elo__ `elo`
 
 | Brand      | It starts                                      | Length           |
 | ---------- | ---------------------------------------------- | ---------------- |
@@ -24,6 +25,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 | Hiper      | 637095, 637599, 637609, 637612, 637600, 637568 | 16               |
 | Diners     | 300, 301, 302, 303, 304, 305, 36, 38, 39       | 14               |
 | JCB        | 3088, 3096, 3112, 3158, 3337, 35               | 16               |
+| Elo        | 401178, 401179, 431274, 438935, 451416, 4573, 4576, 506, 509, 636, 6500, 6504, 6505, 6507, 6509, 6516, 6550, 504175, 627780 | 16               |
 
 ## How to use
 
