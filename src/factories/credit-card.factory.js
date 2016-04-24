@@ -5,9 +5,7 @@
 		.module('mCreditCard')
 		.factory('CreditCardFactory', CreditCard);
 
-	CreditCard.$inject = ['MaskFactory'];
-
-	function CreditCard(MaskFactory) {
+	function CreditCard() {
 		return {
 			isValidByLuhn: isValidByLuhn,
 			getBrand: getBrand
@@ -18,7 +16,7 @@
 				return false;
 			}
 
-			value = MaskFactory.remove(value);
+			value = strip(value);
 
 			if (((value.length >= 13) && (value.length <= 19))) {
 				var check = 0;
@@ -47,7 +45,7 @@
 				return '';
 			}
 
-			value = MaskFactory.remove(value);
+			value = strip(value);
 
 			var brand = '';
 
@@ -81,6 +79,10 @@
 				brand = 'mastercard';
 			}
 			return brand;
+		}
+
+		function strip(value) {
+			return (value || '').toString().replace(/[^\d]+/g, '');
 		}
 	}
 })();
