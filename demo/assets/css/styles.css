@@ -53,7 +53,7 @@
 	color: #333;
 }
 
-.m-creditcard {
+.m-credit-card {
 	position: absolute;
     top: 19px;
     right: 0;
@@ -62,26 +62,26 @@
     display: block;
 }
 
-.m-creditcard.visa {
-	background-image: url(../images/creditcard-visa.svg);
+.m-credit-card.visa {
+	background-image: url(../images/credit-card-visa.svg);
 }
 
-.m-creditcard.mastercard {
-	background-image: url(../images/creditcard-mastercard.svg);
+.m-credit-card.mastercard {
+	background-image: url(../images/credit-card-mastercard.svg);
 }
 
-.m-creditcard.hipercard {
-	background-image: url(../images/creditcard-hipercard.svg);
+.m-credit-card.hipercard {
+	background-image: url(../images/credit-card-hipercard.svg);
 }
 
-.m-creditcard.diners {
-	background-image: url(../images/creditcard-diners.svg);
+.m-credit-card.diners {
+	background-image: url(../images/credit-card-diners.svg);
 }
 
-.m-creditcard.hiper {
-	background-image: url(../images/creditcard-hiper.svg);
+.m-credit-card.hiper {
+	background-image: url(../images/credit-card-hiper.svg);
 }
 
-.m-creditcard.amex {
-	background-image: url(../images/creditcard-amex.svg);
+.m-credit-card.amex {
+	background-image: url(../images/credit-card-amex.svg);
 }
