@@ -15,6 +15,16 @@ _Validate credit card number and identify it brand in a simple way with this mod
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-diners.svg" width="30px"/> __Diners Club International__ `diners`
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-jcb.svg" width="30px"/> __Japanese  Credit Bureau__ `jcb`
 
+| Brand      | It starts                                      | Maximum size     |
+| ---------- | ---------------------------------------------- | ---------------- |
+| Visa       | 4                                              | 13, 16           |
+| Mastercard | 5                                              | 16               |
+| Amex       | 34, 37                                         | 15               |
+| Hipercard  | 606282                                         | 16               |
+| Hiper      | 637095, 637599, 637609, 637612, 637600, 637568 | 16               |
+| Diners     | 300, 301, 302, 303, 304, 305, 36, 38, 39       | 14               |
+| JCB        | 3088, 3096, 3112, 3158, 3337, 35               | 16               |
+
 ## How to use
 
 1. Set the directive on the input.
