@@ -1,6 +1,6 @@
 # m-credit-card
 
-Validate credit card number and identify it brand in a simple way with this module for AngularJS.
+_Validate credit card number and identify it brand in a simple way with this module for AngularJS._
 
 [click to see the demo](https://www.marjoel.com/github/m-credit-card)
 
@@ -34,10 +34,33 @@ Validate credit card number and identify it brand in a simple way with this modu
 	<span class="m-credit-card"></span>
 ```
 
+---
 
 ## Contributors
 
-Before your commit:
+__Setup__
+
+```sh
+$ git clone https://github.com/Marjoel/m-credit-card
+```
+
+Then go to the project's folder.
+
+```sh
+$ cd m-credit-card
+```
+
+Install local dependencies.
+
+```sh
+$ npm install
+```
+  
+```sh
+$ bower install
+```
+
+Before the commit:
 
 Run `grunt style` to validate the code style.
 
@@ -45,7 +68,7 @@ Run `grunt style` to validate the code style.
 $ grunt style
 ```
 
-Run `grunt build` to generate the `dist` folder.
+Then run `grunt build` to generate the `dist` folder.
 
 ```sh
 $ grunt build
