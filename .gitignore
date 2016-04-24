@@ -1,3 +1,5 @@
 node_modules/
+tests/coverage/
+test_out/
 npm-debug.log
 .DS_Store

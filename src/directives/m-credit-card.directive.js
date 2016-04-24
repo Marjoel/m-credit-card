@@ -17,13 +17,13 @@
 				if (oldValue != newValue) {
 					var isValid = false;
 
-					if (luhnValidator(newValue)) {
+					if (isValidByLuhn(newValue)) {
 						isValid = true;
-						cleanCreditCardType($element);
-						addCreditCardType($element, getCreditCardType(newValue));
+						cleanCreditCardBrand($element);
+						addCreditCardBrand($element, getCreditCardBrand(newValue));
 					}
 					else {
-						cleanCreditCardType($element);
+						cleanCreditCardBrand($element);
 					}
 
 					ngModel.$setValidity($attrs.ngModel, isValid);
@@ -31,14 +31,14 @@
 			});
 		}
 
-		function getCreditCardType(value) {
+		function getCreditCardBrand(value) {
 			if (!value) {
 				return '';
 			}
 
 			value = strip(value);
 
-			var type = '';
+			var brand = '';
 
 			var visa = (/^4[0-9]{12,15}$/),
 				mastercard = (/^5[0-9]{15}$/),
@@ -48,63 +48,61 @@
 				hiper = (/^(637095|637599|637609|637612|637600|637568)[0-9]{10}$/);
 
 			if (hipercard.test(value)) {
-				type = 'hipercard';
+				brand = 'hipercard';
 			}
 			else if (hiper.test(value)) {
-				type = 'hiper';
+				brand = 'hiper';
 			}
 			else if (mastercard.test(value)) {
-				type = 'mastercard';
+				brand = 'mastercard';
 			}
 			else if (visa.test(value)) {
-				type = 'visa';
+				brand = 'visa';
 			}
 			else if (diners.test(value)) {
-				type = 'diners';
+				brand = 'diners';
 			}
 			else if (amex.test(value)) {
-				type = 'amex';
+				brand = 'amex';
 			}
-			return type;
+			return brand;
 		}
 
-		function cleanCreditCardType(element) {
+		function cleanCreditCardBrand(element) {
 			element.parent().children().removeClass('visa mastercard hipercard hiper amex');
 		}
 
-		function addCreditCardType(element, value) {
+		function addCreditCardBrand(element, value) {
 			element.parent().children().addClass(value);
 		}
 
-		function luhnValidator(value) {
-			if (value) {
-				value = strip(value);
-				var limit = 14;
+		function isValidByLuhn(value) {
+			if (!value) {
+				return false;
+			}
 
-				if (((value.length >= limit) && (value.length <= 16))) {
-					var nCheck = 0;
-					var nDigit = 0;
-					var bEven  = false;
+			value = strip(value);
 
-					for (var n = value.length - 1; n >= 0; n--) {
-						var cDigit = value.charAt(n);
-						nDigit = parseInt(cDigit, 10);
+			if (((value.length >= 13) && (value.length <= 19))) {
+				var check = 0;
+				var digit = 0;
+				var even = false;
 
-						if (bEven) {
-							if ((nDigit *= 2) > 9) {
-								nDigit -= 9;
-							}
+				for (var i = value.length - 1; i >= 0; i--) {
+					digit = value.charAt(i);
+					digit = parseInt(digit, 10);
+
+					if (even) {
+						if ((digit *= 2) > 9) {
+							digit -= 9;
 						}
-						nCheck += nDigit;
-						bEven = !bEven;
 					}
-					return ((nCheck % 10) === 0);
+					check += digit;
+					even = !even;
 				}
-				return false;
+				return ((check % 10) === 0);
 			}
-			else {
-				return false;
-			}
+			return false;
 		}
 
 		function strip(value) {
