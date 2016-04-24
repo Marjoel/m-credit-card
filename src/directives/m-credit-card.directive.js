@@ -34,7 +34,7 @@
 		}
 
 		function cleanCreditCardBrand(element) {
-			element.parent().children().removeClass('visa mastercard hipercard hiper amex jcb elo aura discover');
+			element.parent().children().removeClass('visa mastercard hipercard hiper amex diners jcb elo aura discover');
 		}
 
 		function addCreditCardBrand(element, value) {
