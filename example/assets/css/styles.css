@@ -1,0 +1,87 @@
+.container {
+	margin-bottom: 20px;
+}
+
+.field {
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.field .fld {
+	appearance: none;
+	-webkit-appearance: none;
+	border-bottom: 1px solid #dadada;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	font-size: 15px;
+	height: 50px;
+	outline: none;
+	padding: 10px 0px 3px 0px;
+	text-transform: lowercase;
+	width: 100%;
+}
+
+.field .fld:focus {
+	border-color: #333;
+}
+
+.field .fld ~ label {
+	position: absolute;
+	display: block;
+	color: #b5b5b5;
+	top: 18px;
+	font-size: 15px;
+	font-weight: 400;
+	margin-bottom: 0;
+	pointer-events: none;
+	transition: 0.2s ease all;
+}
+
+.field .fld-active ~ label {
+	color: #7b7b7b;
+	top: 11px;
+	transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform-origin: top left;
+	transform: translate3d(0px, -12px, 0) scale(0.80);
+	-ms-transform: translate3d(0px, -12px, 0) scale(0.80);
+	-webkit-transform: translate3d(0px, -12px, 0) scale(0.80);
+}
+
+.field .fld-active:focus ~ label{
+	color: #333;
+}
+
+.m-creditcard {
+	position: absolute;
+    top: 19px;
+    right: 0;
+    width: 30px;
+    height: 22px;
+    display: block;
+}
+
+.m-creditcard.visa {
+	background-image: url(../images/creditcard-visa.svg);
+}
+
+.m-creditcard.mastercard {
+	background-image: url(../images/creditcard-mastercard.svg);
+}
+
+.m-creditcard.hipercard {
+	background-image: url(../images/creditcard-hipercard.svg);
+}
+
+.m-creditcard.diners {
+	background-image: url(../images/creditcard-diners.svg);
+}
+
+.m-creditcard.hiper {
+	background-image: url(../images/creditcard-hiper.svg);
+}
+
+.m-creditcard.amex {
+	background-image: url(../images/creditcard-amex.svg);
+}

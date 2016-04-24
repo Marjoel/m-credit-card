@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>Credit Card Validation | m-credit-card</title>
+		<meta name="author" content="Marjoel Moreira">
+		<meta name="description" content="Validate credit card number and identify it brand in a simple way with this module for AngularJS.">
+		<meta name="keywords" content="marjoel, moreira, front-end, development, engineering, software, credit card, validation, brand">
+		<meta property="og:title" content="Credit Card Validation | m-credit-card" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.marjoel.com/github/m-credit-card" />
+		<meta property="og:image" content="/assets/images/marjoel-logo.jpg" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@MarjoelM" />
+		<meta name="twitter:title" content="Credit Card Validation | m-credit-card" />
+		<meta name="twitter:description" content="Validate credit card number and identify it brand in a simple way with this module for AngularJS." />
+		<meta name="twitter:image" content="/assets/images/marjoel-logo.jpg" />
+		<link rel="shortcut icon" href="/assets/images/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="assets/vendor/sanitize-css/sanitize.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+	</head>
+
+	<body>
+		<section class="jumbotron">
+			<div class="container">
+				<h1>m-credit-card <a class="btn btn-primary" href="https://github.com/Marjoel/m-credit-card" role="button" target="_blank">github</a> </h1>
+				<p>Validate credit card number and identify it brand in a simple way with this module for AngularJS.</p>
+				<p>by Marjoel Moreira.</p>
+			</div>
+		</section>
+
+		<ol class="breadcrumb container">
+			<li><a href="https://www.marjoel.com">marjoel.com</a></li>
+			<li><a href="http://linkedin.marjoel.com">linkedin</a></li>
+			<li><a href="http://github.marjoel.com">github</a></li>
+			<li><a href="https://www.marjoel.com/github/m-credit-card/">m-credit-card</a></li>
+		</ol>
+
+		<section class="container ng-cloak">
+			<form name="form" novalidate>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="field">
+							<input type="text" class="fld" name="number" ng-model="vm.card.number" field m-credit-card required />
+							<label>credit card number</label>
+							<span class="m-creditcard"></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<p><span class="label label-default">valid</span> <span ng-bind="form.number.$valid"></span></p>
+						<p><span class="label label-primary">visa</span> 4916 4148 0214 8732</p>
+						<p><span class="label label-primary">mastercard</span> 5588 1396 3758 0650</p>
+						<p><span class="label label-danger">hipercard</span> 60628 2606 0750 197</p>
+						<p><span class="label label-warning">hiper</span> 6370 9512 3455 6788</p>
+						<p><span class="label label-info">amex</span> 3477 1282 4774 832</p>
+						<p><span class="label label-primary">diners</span> 3680 0914 0752 55</p>
+					</div>
+				</div>
+			</form>
+		</section>
+		
+		<div class="text-center">Copyright © 2016, Marjoel Moreira</div>
+
+		<script type="text/javascript" src="assets/vendor/angular/angular.min.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/components/directives/field.directive.js"></script>
+		<script type="text/javascript" src="../dist/m-credit-card.min.js"></script>
+	</body>
+</html>
