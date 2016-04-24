@@ -7,12 +7,12 @@ _Validate credit card number and identify it brand in a simple way with this mod
 
 ## Supported brands
 
-* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-visa.svg" width="30px"/> __Visa__ `visa`
-* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-mastercard.svg" width="30px"/> __Mastercard__ `mastercard`
-* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-amex.svg" width="30px"/> __American Express__ `amex`
-* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hipercard.svg" width="30px"/> __Hipercard__  `hipercard`
-* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hiper.svg" width="30px"/> __Hiper__ `hiper`
-* <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-diners.svg" width="30px"/> __Diners Club International__ `diners`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-visa.svg" width="30px"/> __Visa__ `visa`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-mastercard.svg" width="30px"/> __Mastercard__ `mastercard`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-amex.svg" width="30px"/> __American Express__ `amex`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hipercard.svg" width="30px"/> __Hipercard__  `hipercard`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-hiper.svg" width="30px"/> __Hiper__ `hiper`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-diners.svg" width="30px"/> __Diners Club International__ `diners`
 
 ## How to use
 
@@ -20,13 +20,13 @@ _Validate credit card number and identify it brand in a simple way with this mod
 2. Set a span with a class called `m-credit-card`.
 3. Set a custom `css` for the following classes:
 
-* `.m-credit-card`
-* `.m-credit-card.visa`
-* `.m-credit-card.mastercard`
-* `.m-credit-card.hipercard`
-* `.m-credit-card.hiper`
-* `.m-credit-card.diners`
-* `.m-credit-card.amex`
+- `.m-credit-card`
+- `.m-credit-card.visa`
+- `.m-credit-card.mastercard`
+- `.m-credit-card.hipercard`
+- `.m-credit-card.hiper`
+- `.m-credit-card.diners`
+- `.m-credit-card.amex`
 
 
 ```html
@@ -38,7 +38,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 
 ## Contributors
 
-__Setup__
+### Setup
 
 ```sh
 $ git clone https://github.com/Marjoel/m-credit-card
@@ -56,7 +56,7 @@ Install local dependencies.
 $ npm install
 ```
 
-__Before the commit__
+### Before the commit
 
 Run `grunt style` to validate the code style.
 
@@ -73,5 +73,5 @@ $ grunt build
 ---
 
 ## To do
-* Unit testing
-* Identify other credit card brands
+- [ ] Unit testing
+- [ ] Identify other credit card brands
