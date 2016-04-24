@@ -34,7 +34,6 @@ _Validate credit card number and identify it brand in a simple way with this mod
 <span class="m-credit-card"></span>
 ```
 
-
 ---
 
 ## Contributors
