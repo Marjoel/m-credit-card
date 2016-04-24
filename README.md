@@ -16,8 +16,8 @@ Validate credit card number and identify it brand in a simple way with this modu
 ## How to use
 
 1. Set the directive on the input.
-2. Set a span with a class called "m-credit-card".
-3. Set a custom css for the classes "m-credit-card, visa, mastercard, hipercard, hiper, diners, amex".
+2. Set a span with a class called `m-credit-card`.
+3. Set a custom css for the classes `m-credit-card, visa, mastercard, hipercard, hiper, diners, amex`.
 
 
 ```html
