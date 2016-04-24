@@ -69,3 +69,9 @@ Then run `grunt build` to generate the `dist` folder.
 ```sh
 $ grunt build
 ```
+
+---
+
+## To do
+* Unit testing
+* Identify other credit card brands
