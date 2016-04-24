@@ -1,7 +1,8 @@
 # m-credit-card
 
 Validate credit card number and identify it brand in a simple way with this module for AngularJS.
-```[click to see the demo](https://www.marjoel.com/github/m-credit-card)```
+
+[click to see the demo](https://www.marjoel.com/github/m-credit-card)
 
 
 ## Supported brands
