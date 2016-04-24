@@ -42,7 +42,7 @@ Before your commit:
 Run `grunt style` to validate the code style.
 
 ```sh
-$ grunt prod
+$ grunt style
 ```
 
 Run `grunt build` to generate the `dist` folder.
