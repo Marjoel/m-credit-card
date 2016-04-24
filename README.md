@@ -16,6 +16,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-jcb.svg" width="30px"/> __Japanese  Credit Bureau__ `jcb`
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-elo.svg" width="30px"/> __Elo__ `elo`
 - <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-aura.svg" width="30px"/> __Aura__ `aura`
+- <img src="https://www.marjoel.com/github/m-credit-card/assets/images/credit-card-discover.svg" width="30px"/> __Discover__ `discover`
 
 | Brand      | It starts                                      | Length           |
 | ---------- | ---------------------------------------------- | ---------------- |
