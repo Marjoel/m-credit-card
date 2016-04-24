@@ -51,7 +51,7 @@ describe('CreditCardFactory', function() {
 		});
 		
 		it('it should be discover', function() {
-			expect(CreditCardFactoryMock.getBrand('6011809681884795')).toBe('aura');
+			expect(CreditCardFactoryMock.getBrand('6011809681884795')).toBe('discover');
 		});
 	});
 
