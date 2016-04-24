@@ -93,3 +93,11 @@
 .m-credit-card.elo {
 	background-image: url(../images/credit-card-elo.svg);
 }
+
+.m-credit-card.aura {
+	background-image: url(../images/credit-card-aura.svg);
+}
+
+.m-credit-card.discover {
+	background-image: url(../images/credit-card-discover.svg);
+}

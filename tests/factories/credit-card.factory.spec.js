@@ -45,6 +45,14 @@ describe('CreditCardFactory', function() {
 		it('it should be elo', function() {
 			expect(CreditCardFactoryMock.getBrand('6550212354313464')).toBe('elo');
 		});
+		
+		it('it should be aura', function() {
+			expect(CreditCardFactoryMock.getBrand('5078601870000115')).toBe('aura');
+		});
+		
+		it('it should be discover', function() {
+			expect(CreditCardFactoryMock.getBrand('6011809681884795')).toBe('aura');
+		});
 	});
 
 	describe('isValidByLuhn', function() {
