@@ -8,7 +8,8 @@
 	function CreditCard() {
 		return {
 			isValidByLuhn: isValidByLuhn,
-			getBrand: getBrand
+			getBrand: getBrand,
+			getSupportedBrandClasses: getSupportedBrandClasses
 		};
 
 		function isValidByLuhn(value) {
@@ -17,13 +18,12 @@
 			}
 
 			value = strip(value);
+			var valueLength = value.length;
 
-			if (((value.length >= 13) && (value.length <= 19))) {
-				var check = 0;
-				var digit = 0;
-				var even = false;
+			if ((valueLength >= 13) && (valueLength <= 19)) {
+				var check = 0, digit = 0, even = false;
 
-				for (var i = value.length - 1; i >= 0; i--) {
+				for (var i = valueLength - 1; i >= 0; i--) {
 					digit = value.charAt(i);
 					digit = parseInt(digit, 10);
 
@@ -47,9 +47,8 @@
 
 			value = strip(value);
 
-			var brand = '';
-
-			var visa = (/^(4)[0-9]{12,15}$/),
+			var brand = '',
+				visa = (/^(4)[0-9]{12,15}$/),
 				mastercard = (/^(5)[0-9]{15}$/),
 				amex = (/^(34|37)[0-9]{13}$/),
 				diners = (/^(300|301|302|303|304|305)[0-9]{11}|(36|38|39)[0-9]{12}$/),
@@ -66,23 +65,23 @@
 			else if (hipercard.test(value)) {
 				brand = 'hipercard';
 			}
-			else if (aura.test(value)) {
-				brand = 'aura';
-			}
 			else if (hiper.test(value)) {
 				brand = 'hiper';
 			}
 			else if (discover.test(value)) {
 				brand = 'discover';
 			}
-			else if (diners.test(value)) {
-				brand = 'diners';
-			}
 			else if (jcb.test(value)) {
 				brand = 'jcb';
 			}
+			else if (diners.test(value)) {
+				brand = 'diners';
+			}
 			else if (amex.test(value)) {
 				brand = 'amex';
+			}
+			else if (aura.test(value)) {
+				brand = 'aura';
 			}
 			else if (visa.test(value)) {
 				brand = 'visa';
@@ -95,6 +94,10 @@
 
 		function strip(value) {
 			return value.toString().replace(/[^\d]+/g, '');
+		}
+
+		function getSupportedBrandClasses() {
+			return 'visa mastercard hipercard hiper amex diners jcb elo aura discover';
 		}
 	}
 })();

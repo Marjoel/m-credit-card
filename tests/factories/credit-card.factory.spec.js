@@ -76,4 +76,10 @@ describe('CreditCardFactory', function() {
 			expect(CreditCardFactoryMock.isValidByLuhn('3597639252063829')).toBe(true);
 		});
 	});
+
+	describe('getSupportedBrandClasses', function() {
+		it('it should return all the supported brand classes: visa mastercard hipercard hiper amex diners jcb elo aura discover', function() {
+			expect(CreditCardFactoryMock.getSupportedBrandClasses()).toBe('visa mastercard hipercard hiper amex diners jcb elo aura discover');
+		});
+	});
 });

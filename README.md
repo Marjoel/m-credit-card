@@ -1,4 +1,4 @@
-# m-credit-card ~4kb
+# m-credit-card ~2kb
 
 _Validate credit card number and identify it brand in a simple way with this module for AngularJS._
 
