@@ -33,20 +33,20 @@ _Validate credit card number and identify it brand in a simple way with this mod
 
 ## How to use
 
-1. Set the directive `m-credit-card` on the input.
+Set the directive `m-credit-card` on the input.
 
 ```html
 <input type="text" m-credit-card />
 ```
 
-2. Set a span with a class called `m-credit-card`.
+Set a span with a class called `m-credit-card`.
 
 ```html
 <input type="text" m-credit-card />
 <span class="m-credit-card"></span>
 ```
 
-3. Set a custom `css` for the following classes:
+Set a custom `css` for the following classes:
 
 - `.m-credit-card`
 - `.m-credit-card.visa`
