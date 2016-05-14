@@ -33,6 +33,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 
 ## How to use
 Install `m-credit-card` with bower.
+
 ```sh
 $ bower install m-credit-card --save
 ```
