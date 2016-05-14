@@ -1,0 +1,25 @@
+{
+  "name": "m-credit-card",
+  "description": "Validate credit card number and identify it brand in a simple way with this module for AngularJS.",
+  "version": "1.0.0",
+  "main": [
+    "dist/m-credit-card.min.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Marjoel/m-credit-card.git"
+  },
+  "keywords": [
+    "credit card",
+    "credit",
+    "card",
+    "brand",
+    "acquirer",
+    "bank"
+  ],
+  "authors": [
+    "Marjoel Moreira <marjoel@marjoel.com>"
+  ],
+  "homepage": "https://github.com/Marjoel/m-credit-card",
+  "license": "MIT"
+}
