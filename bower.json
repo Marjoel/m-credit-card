@@ -1,9 +1,7 @@
 {
   "name": "m-credit-card",
   "main": [
-    "src/app.js",
-    "src/directives/m-credit-card.directive.js",
-    "src/factories/m-credit-card.factory.js"
+    "dist/m-credit-card.js"
   ],
   "version": "1.0.0",
   "homepage": "https://github.com/Marjoel/m-credit-card",
