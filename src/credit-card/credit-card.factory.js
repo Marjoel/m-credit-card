@@ -5,7 +5,9 @@
 		.module('mCreditCard')
 		.factory('CreditCardFactory', CreditCard);
 
-	function CreditCard() {
+	CreditCard.$inject = ['MaskFactory'];
+
+	function CreditCard(MaskFactory) {
 		return {
 			isCardValid: isCardValid,
 			isCardValidByLuhn: isCardValidByLuhn,
@@ -34,7 +36,7 @@
 				return false;
 			}
 
-			cardNumber = removeMask(cardNumber);
+			cardNumber = MaskFactory.remove(cardNumber);
 
 			if (cardNumber.length < 13 || cardNumber.length > 19) {
 				return false;
@@ -79,7 +81,7 @@
 				return '';
 			}
 
-			cardNumber = removeMask(cardNumber);
+			cardNumber = MaskFactory.remove(cardNumber);
 
 			var brands = getAcceptedBrands();
 			var index = brands.length;
@@ -109,10 +111,6 @@
 				{brand: 'aura', rule: (/^(50)[0-9]{14}$/)},
 				{brand: 'visa', rule: (/^4[0-9]{12,15}$/)}
 			];
-		}
-
-		function removeMask(value) {
-			return value ? value.replace(/[^\d]+/g, '') : value;
 		}
 	}
 })();

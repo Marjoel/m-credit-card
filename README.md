@@ -118,3 +118,4 @@ $ grunt build
 
 ## To do
 - [ ] Identify other credit card brands
+- [ ] Unit testing for directive
