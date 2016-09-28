@@ -36,7 +36,7 @@
 
 			cardNumber = removeMask(cardNumber);
 
-			if (cardNumber.length < 12 || cardNumber.length > 16) {
+			if (cardNumber.length < 13 || cardNumber.length > 19) {
 				return false;
 			}
 
