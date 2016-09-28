@@ -21,7 +21,7 @@ _Validate credit card number and identify it brand in a simple way with this mod
 | Brand      | It starts                                      | Length           |
 | ---------- | ---------------------------------------------- | ---------------- |
 | Visa       | 4                                              | 13, 16           |
-| Mastercard | 5                                              | 16               |
+| Mastercard | 5, 2                                           | 16               |
 | Amex       | 34, 37                                         | 15               |
 | Hipercard  | 606282                                         | 16               |
 | Hiper      | 637095, 637599, 637609, 637612, 637600, 637568 | 16               |
@@ -30,6 +30,8 @@ _Validate credit card number and identify it brand in a simple way with this mod
 | Elo        | 401178, 401179, 431274, 438935, 451416, 4573, 4576, 506, 509, 636, 6500, 6504, 6505, 6507, 6509, 6516, 6550, 504175, 627780 | 16               |
 | Aura       | 50                                             | 16               |
 | Discover   | 6011, 622, 64, 65                              | 16               |
+
+_Official data from the two of the largest acquirers in the world and from the largest bank in Latin America._
 
 ## How to use
 Install `m-credit-card` with bower.
