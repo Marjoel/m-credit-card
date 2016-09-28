@@ -21,7 +21,7 @@
 		**/
 		function isCardValid (cardNumber) {
 			return isCardValidByBrand(cardNumber);
-		};
+		}
 
 		/**
 		 * Validate a credit card number by luhn algorithym
@@ -55,7 +55,7 @@
 				bEven = !bEven;
 			}
 			return ((nCheck % 10) === 0);
-		};
+		}
 
 		/**
 		 * Validate a credit card number by accepted brands
@@ -67,7 +67,7 @@
 				return false;
 			}
 			return true;
-		};
+		}
 
 		/**
 		 * Return the brand of a credit card number
@@ -90,7 +90,7 @@
 				}
 			}
 			return '';
-		};
+		}
 
 		/**
 		 * Return the accepted brands
@@ -109,7 +109,7 @@
 				{brand: 'aura', rule: (/^(50)[0-9]{14}$/)},
 				{brand: 'visa', rule: (/^4[0-9]{12,15}$/)}
 			];
-		};
+		}
 
 		function removeMask(value) {
 			return value ? value.replace(/[^\d]+/g, '') : value;
