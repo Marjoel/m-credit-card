@@ -24,26 +24,31 @@
 		function link($scope, $element, $attrs, ngModel) {
 			$scope.$watch($attrs.ngModel, function(newValue, oldValue) {
 				if (oldValue != newValue) {
-					var isValid = CreditCardFactory.isValidByLuhn(newValue);
+					var isValid = CreditCardFactory.isCardValidByBrand(newValue);
 
 					cleanCreditCardBrand($element);
 
 					if (isValid) {
-						cleanCreditCardBrand($element);
-						addCreditCardBrand($element, CreditCardFactory.getBrand(newValue));
+						addCreditCardBrand($element, newValue);
 					}
-
 					ngModel.$setValidity($attrs.ngModel, isValid);
 				}
 			});
 		}
 
 		function cleanCreditCardBrand(element) {
-			element.parent().children().removeClass(CreditCardFactory.getSupportedBrandClasses());
+			var brands = CreditCardFactory.getAcceptedBrands();
+			var index = brands.length;
+			var classes = '';
+
+			while (index--) {
+				classes = classes + ' ' + brands[index].brand;
+			}
+			element.parent().children().removeClass(classes);
 		}
 
-		function addCreditCardBrand(element, value) {
-			element.parent().children().addClass(value);
+		function addCreditCardBrand(element, cardNumber) {
+			element.parent().children().addClass(CreditCardFactory.getCardBrand(cardNumber));
 		}
 	}
 })();
@@ -57,97 +62,112 @@
 
 	function CreditCard() {
 		return {
-			isValidByLuhn: isValidByLuhn,
-			getBrand: getBrand,
-			getSupportedBrandClasses: getSupportedBrandClasses
+			isCardValid: isCardValid,
+			isCardValidByLuhn: isCardValidByLuhn,
+			isCardValidByBrand: isCardValidByBrand,
+			getCardBrand: getCardBrand,
+			getAcceptedBrands: getAcceptedBrands
 		};
 
-		function isValidByLuhn(value) {
-			if (!value) {
+		/**
+		 * Validate a credit card number by luhn algorithym and accepted brands
+		 * @param {string} cardNumber - Credit card number
+		 * @returns {boolean}
+		**/
+		function isCardValid (cardNumber) {
+			return isCardValidByBrand(cardNumber);
+		};
+
+		/**
+		 * Validate a credit card number by luhn algorithym
+		 * @param {string} cardNumber - Credit card number
+		 * @param {number=} minimum - Minimum of digits of a credit card number
+		 * @returns {boolean}
+		**/
+		function isCardValidByLuhn (cardNumber) {
+			if (!cardNumber) {
 				return false;
 			}
 
-			value = strip(value);
-			var valueLength = value.length;
+			cardNumber = removeMask(cardNumber);
 
-			if ((valueLength >= 13) && (valueLength <= 19)) {
-				var check = 0, digit = 0, even = false;
-
-				for (var i = valueLength - 1; i >= 0; i--) {
-					digit = value.charAt(i);
-					digit = parseInt(digit, 10);
-
-					if (even) {
-						if ((digit *= 2) > 9) {
-							digit -= 9;
-						}
-					}
-					check += digit;
-					even = !even;
-				}
-				return ((check % 10) === 0);
+			if (cardNumber.length < 12 || cardNumber.length > 16) {
+				return false;
 			}
-			return false;
-		}
 
-		function getBrand(value) {
-			if (!value) {
+			var nCheck = 0;
+			var nDigit = 0;
+			var bEven = false;
+
+			for (var n = cardNumber.length - 1; n >= 0; n--) {
+				var cDigit = cardNumber.charAt(n);
+				nDigit = parseInt(cDigit, 10);
+
+				if (bEven && ((nDigit *= 2) > 9)) {
+					nDigit -= 9;
+				}
+				nCheck += nDigit;
+				bEven = !bEven;
+			}
+			return ((nCheck % 10) === 0);
+		};
+
+		/**
+		 * Validate a credit card number by accepted brands
+		 * @param {string} cardNumber - Credit card number
+		 * @returns {boolean}
+		**/
+		function isCardValidByBrand (cardNumber) {
+			if (getCardBrand(cardNumber) === '') {
+				return false;
+			}
+			return true;
+		};
+
+		/**
+		 * Return the brand of a credit card number
+		 * @param {string} cardNumber - Credit card number
+		 * @returns {string}
+		**/
+		function getCardBrand (cardNumber) {
+			if (!cardNumber || !isCardValidByLuhn(cardNumber)) {
 				return '';
 			}
 
-			value = strip(value);
+			cardNumber = removeMask(cardNumber);
 
-			var brand = '',
-				visa = (/^(4)[0-9]{12,15}$/),
-				mastercard = (/^(5)[0-9]{15}$/),
-				amex = (/^(34|37)[0-9]{13}$/),
-				diners = (/^(300|301|302|303|304|305)[0-9]{11}|(36|38|39)[0-9]{12}$/),
-				hipercard = (/^(606282)[0-9]{10}$/),
-				hiper = (/^(637095|637599|637609|637612|637600|637568)[0-9]{10}$/),
-				jcb = (/^(3088|3096|3112|3158|3337)[0-9]{12}|(35)[0-9]{14}$/),
-				elo = (/^(506|509|636)[0-9]{13}|(4573|4576|6500|6504|6505|6507|6509|6516|6550)[0-9]{12}|(401178|401179|431274|438935|451416|504175|627780)[0-9]{10}$/),
-				aura = (/^(50)[0-9]{14}$/),
-				discover = (/^(6011)[0-9]{12}|(622)[0-9]{13}|(64|65)[0-9]{14}$/);
+			var brands = getAcceptedBrands();
+			var index = brands.length;
 
-			if (elo.test(value)) {
-				brand = 'elo';
+			while (index--) {
+				if ((brands[index].rule).test(cardNumber)) {
+					return brands[index].brand;
+				}
 			}
-			else if (hipercard.test(value)) {
-				brand = 'hipercard';
-			}
-			else if (hiper.test(value)) {
-				brand = 'hiper';
-			}
-			else if (discover.test(value)) {
-				brand = 'discover';
-			}
-			else if (jcb.test(value)) {
-				brand = 'jcb';
-			}
-			else if (diners.test(value)) {
-				brand = 'diners';
-			}
-			else if (amex.test(value)) {
-				brand = 'amex';
-			}
-			else if (aura.test(value)) {
-				brand = 'aura';
-			}
-			else if (visa.test(value)) {
-				brand = 'visa';
-			}
-			else if (mastercard.test(value)) {
-				brand = 'mastercard';
-			}
-			return brand;
-		}
+			return '';
+		};
 
-		function strip(value) {
-			return value.toString().replace(/[^\d]+/g, '');
-		}
+		/**
+		 * Return the accepted brands
+		 * @returns {array}
+		**/
+		function getAcceptedBrands () {
+			return [
+				{brand: 'discover', rule: (/^(6011)[0-9]{12}|(622)[0-9]{13}|(64|65)[0-9]{14}$/)},
+				{brand: 'aura', rule: (/^(50)[0-9]{14}$/)},
+				{brand: 'elo', rule: (/^(506|509|636)[0-9]{13}|(4573|4576|6500|6504|6505|6507|6509|6516|6550)[0-9]{12}|(401178|401179|431274|438935|451416|504175|627780)[0-9]{10}$/)},
+				{brand: 'amex', rule: (/^(34|37)[0-9]{13}$/)},
+				{brand: 'jcb', rule: (/^(3088|3096|3112|3158|3337)[0-9]{12}|(35)[0-9]{14}$/)},
+				{brand: 'hipercard', rule: (/^606282[0-9]{10}$/)},
+				{brand: 'diners', rule: (/^30[0-5]{1}[0-9]{11}|(36|38|39)[0-9]{12}$/)},
+				{brand: 'hiper', rule: (/^637(095|568|599|600|609|612)[0-9]{10}$/)},
+				{brand: 'mastercard', rule: (/^(2|5)[0-9]{15}$/)},
+				{brand: 'visa', rule: (/^4[0-9]{12,15}$/)}
+			];
+		};
 
-		function getSupportedBrandClasses() {
-			return 'visa mastercard hipercard hiper amex diners jcb elo aura discover';
+		function removeMask(value) {
+			return value ? value.replace(/[^\d]+/g, '') : value;
 		}
 	}
 })();

@@ -17,26 +17,31 @@
 		function link($scope, $element, $attrs, ngModel) {
 			$scope.$watch($attrs.ngModel, function(newValue, oldValue) {
 				if (oldValue != newValue) {
-					var isValid = CreditCardFactory.isValidByLuhn(newValue);
+					var isValid = CreditCardFactory.isCardValidByBrand(newValue);
 
 					cleanCreditCardBrand($element);
 
 					if (isValid) {
-						cleanCreditCardBrand($element);
-						addCreditCardBrand($element, CreditCardFactory.getBrand(newValue));
+						addCreditCardBrand($element, newValue);
 					}
-
 					ngModel.$setValidity($attrs.ngModel, isValid);
 				}
 			});
 		}
 
 		function cleanCreditCardBrand(element) {
-			element.parent().children().removeClass(CreditCardFactory.getSupportedBrandClasses());
+			var brands = CreditCardFactory.getAcceptedBrands();
+			var index = brands.length;
+			var classes = '';
+
+			while (index--) {
+				classes = classes + ' ' + brands[index].brand;
+			}
+			element.parent().children().removeClass(classes);
 		}
 
-		function addCreditCardBrand(element, value) {
-			element.parent().children().addClass(value);
+		function addCreditCardBrand(element, cardNumber) {
+			element.parent().children().addClass(CreditCardFactory.getCardBrand(cardNumber));
 		}
 	}
 })();
